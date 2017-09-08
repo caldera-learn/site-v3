@@ -66,4 +66,5 @@ class Teachers {
 
         register_post_type( 'teacher', $args );
     }
+
 }

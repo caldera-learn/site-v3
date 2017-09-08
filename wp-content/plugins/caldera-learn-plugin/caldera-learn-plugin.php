@@ -18,3 +18,9 @@ define('EDD_SLUG', 'caldera-learn-courses');
 
 // Setup Teachers CPT
 $CalderaLearnTeachers = CalderaLearn\Content\Teachers::instance();
+
+// Setup Course AddOns (above EDD)
+$CalderaLearnCourse = CalderaLearn\Content\Courses::instance();
+
+// Load ACF Fields
+$CalderaLearnACF = CalderaLearn\ACF\LoadACF::instance();
