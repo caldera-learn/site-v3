@@ -3,3 +3,5 @@
 *.DS_Store
 wp-config.php
 wp-content/uploads/
+wp-content/themes/caldera-learn/node_modules/
+wp-content/themes/caldera-learn/build/
