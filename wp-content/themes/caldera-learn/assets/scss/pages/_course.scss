@@ -3,14 +3,9 @@ header.course-header {
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-bottom: 2px solid $color-caldera-dark-green;
   opacity: 0.75;
   &:before {
     background: linear-gradient(to bottom, transparent, white);
-  }
-
-  @media screen and (max-width:$screen-md) {
-    max-height: 200px;
   }
 }
 
