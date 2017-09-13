@@ -6,9 +6,10 @@
  * Time: 12:34 AM
  */
 
-namespace CalderaLearn\ACF;
-
 use CalderaLearn\ACF\Teachers;
+use CalderaLearn\ACF\Courses;
+
+namespace CalderaLearn\ACF;
 
 class LoadACF {
     /**
@@ -35,5 +36,6 @@ class LoadACF {
 
     function __construct() {
         Teachers::instance();
+        Courses::instance();
     }
 }

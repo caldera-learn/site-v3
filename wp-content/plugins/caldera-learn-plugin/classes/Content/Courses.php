@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: roysivan
- * Date: 9/8/17
- * Time: 12:24 AM
- */
 
 namespace CalderaLearn\Content;
 
@@ -34,6 +28,7 @@ class Courses {
 
     function __construct() {
         add_action( 'init', [ $this, 'cl_setup_language_taxonomy' ] );
+        add_action( 'init', [ $this, 'cl_setup_download_type_taxonomy' ] );
     }
 
     public function cl_setup_language_taxonomy() {
@@ -61,5 +56,32 @@ class Courses {
         );
 
         register_taxonomy( 'language', array( 'download' ), $args );
+    }
+
+    public function cl_setup_download_type_taxonomy() {
+        $labels = array(
+            'name'              => _x( 'Download Types', 'taxonomy general name', 'caldera-learn' ),
+            'singular_name'     => _x( 'Download Type', 'taxonomy singular name', 'caldera-learn' ),
+            'search_items'      => __( 'Search Types', 'caldera-learn' ),
+            'all_items'         => __( 'All Types', 'caldera-learn' ),
+            'parent_item'       => __( 'Parent Type', 'caldera-learn' ),
+            'parent_item_colon' => __( 'Parent Type:', 'caldera-learn' ),
+            'edit_item'         => __( 'Edit Type', 'caldera-learn' ),
+            'update_item'       => __( 'Update Type', 'caldera-learn' ),
+            'add_new_item'      => __( 'Add New Download Type', 'caldera-learn' ),
+            'new_item_name'     => __( 'New Type Name', 'caldera-learn' ),
+            'menu_name'         => __( 'Download Types', 'caldera-learn' ),
+        );
+
+        $args = array(
+            'hierarchical'      => true,
+            'labels'            => $labels,
+            'show_ui'           => true,
+            'show_admin_column' => true,
+            'query_var'         => true,
+            'rewrite'           => array( 'slug' => 'download-types' ),
+        );
+
+        register_taxonomy( 'download-types', array( 'download' ), $args );
     }
 }
