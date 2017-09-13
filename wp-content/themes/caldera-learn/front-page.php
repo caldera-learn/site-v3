@@ -44,9 +44,8 @@ $posts = new WP_Query( [ 'post_type' => 'post', 'posts_per_page' => 4 ] );
             <?php while( $teachers->have_posts() ) : $teachers->the_post(); ?>
             <?php $teacher = get_field( 'cl_teacher_user' ); ?>
             <?php $avatar_url = get_avatar_url( $teacher['ID'] ); ?>
-                <div class="col-sm-3 teacher">
-                    <a href="<?php the_permalink(); ?>">
-                        <?php echo $teacher['user_avatar']; ?>
+                <div class="col-xs-6 col-sm-3 teacher">
+                    <a href="<?php the_permalink(); ?>" style="background-image:url(<?php echo $avatar_url; ?>);">
                         <span class="teacher-title">
                             <?php the_title(); ?>
                         </span>

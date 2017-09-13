@@ -6,4 +6,29 @@ body {
     padding-top: 72px;
   }
 
+
+  .content {
+    p {
+      font-size: 1.25em;
+      line-height: 1.5em;
+      @media screen and (max-width:$screen-md) {
+        font-size: 1em;
+      }
+    }
+    img {
+      display: block;
+      height: auto;
+      max-width: 100%;
+      opacity: 0.6;
+      transition: all 0.5s;
+      &:hover {
+        opacity: 0.9;
+      }
+    }
+    a {
+      & > img {
+        border: 2px solid $color-caldera-orange;
+      }
+    }
+  }
 }

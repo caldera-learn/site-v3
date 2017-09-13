@@ -1,0 +1,125 @@
+header.course-header {
+  @include aspect-ratio(16,9);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: 2px solid $color-caldera-dark-green;
+  opacity: 0.75;
+  max-height: 350px;
+  &:before {
+    background: linear-gradient(to bottom, transparent, white);
+  }
+
+  @media screen and (max-width:$screen-md) {
+    max-height: 200px;
+  }
+}
+
+.course-title {
+  margin-bottom: 40px;
+  margin-top: -120px;
+  position: relative;
+  width: 100%;
+  z-index: 100;
+  h1 {
+    color: $gray-base;
+    font-family: $font-caldera-title-font;
+    font-size: 4em;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .download-type {
+    color: $color-caldera-orange;
+    display: block;
+    text-align: center;
+    font-family: $font-caldera-title-font;
+    font-size: 1.5em;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  @media screen and (max-width:$screen-md) {
+    margin-bottom: 10px;
+    margin-top: -80px;
+    h1 {
+      font-size: 2em;
+    }
+  }
+}
+
+.course-languages {
+  border-top: 1px solid $gray-base;
+  border-bottom: 1px solid $gray-base;
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 20px 0 20px;
+  li {
+    display: inline-block;
+    a {
+      display: block;
+      font-family: $font-caldera-title-font;
+      font-size: 1.25em;
+      padding: 0 5px;
+      &:hover {
+        color: $color-caldera-orange;
+      }
+    }
+  }
+}
+
+.video-course-meta {
+  margin: 0 0 20px 0;
+  font-size: 1.25em;
+  .course-length {
+    display: inline-block;
+    font-family: $font-caldera-title-font;
+    margin: 0 20px 0 0;
+    padding: 0;
+    vertical-align: top;
+  }
+  .course-teachers {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    li {
+      display: inline-block;
+      a {
+        display: block;
+        font-family: $font-caldera-title-font;
+        font-size: 1em;
+        padding: 0 5px;
+        &:hover {
+          color: $color-caldera-orange;
+        }
+      }
+    }
+  }
+
+}
+
+.course {
+  .content {
+    p:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+  .edd-submit.button.blue {
+    background: $color-caldera-orange;
+    border: 1px solid $gray-base;
+    display: block;
+    font-family: $font-caldera-title-font;
+    font-size: 1.5em;
+    font-weight: 400;
+    padding: 12px 12px;
+    text-transform: uppercase;
+    width: 100%;
+    &:first-of-type {
+      margin: 40px 0 0 0;
+      font-size: 1.25em;
+      padding: 6px 12px;
+    }
+  }
+}

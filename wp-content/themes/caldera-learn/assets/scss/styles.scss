@@ -2,6 +2,9 @@
 @import './../../node_modules/font-awesome/scss/font-awesome';
 @import 'bootstrap/bootstrap-custom';
 
+// Helpers
+@import 'helpers/mixins';
+
 // General
 @import 'general';
 
@@ -11,3 +14,4 @@
 
 // Pages
 @import 'pages/home';
+@import 'pages/course';

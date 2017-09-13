@@ -66,11 +66,17 @@ $teacher-height: 200px;
     text-align: center;
   }
   .teacher {
-    height: $teacher-height + 40;
+    height: auto;
     padding-bottom: 20px;
     padding-top: 20px;
     a {
-      height: $teacher-height;
+      @include aspect-ratio($teacher-height,$teacher-height);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      border: 1px solid black;
+      border-radius: 50%;
+      height: auto;
       text-align: center;
       @media screen and (max-width:$screen-md) {
         height: auto;
@@ -87,12 +93,12 @@ $teacher-height: 200px;
         transition: all 0.5s;
       }
       span.teacher-title {
-        color: $color-caldera-orange;
+        color: white;
         display: block;
         font-size: 1.5em;
         opacity: 0;
         position: absolute;
-        text-shadow: 0 0 1px black;
+        text-shadow: 0 0 2px black;
         text-transform: uppercase;
         top: 50%;
         transform: translateY(-50%);
