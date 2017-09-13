@@ -1,11 +1,10 @@
 header.course-header {
   @include aspect-ratio(16,9);
-  background-position: bottom center;
+  background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   border-bottom: 2px solid $color-caldera-dark-green;
   opacity: 0.75;
-  max-height: 350px;
   &:before {
     background: linear-gradient(to bottom, transparent, white);
   }
