@@ -5,15 +5,46 @@ header.course-header {
   background-size: cover;
   opacity: 0.75;
   &:before {
-    background: linear-gradient(to bottom, transparent, white);
+    background: linear-gradient(to bottom, transparent, $body-bg);
+  }
+  video {
+    @include aspect-ratio(16,9);
+    background: rgba(0,0,0,0.5);
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    padding: 20px;
+    top: 40px;
+    width: 100%
+  }
+  video::-internal-media-controls-download-button {
+    display:none;
+  }
+
+  video::-webkit-media-controls-enclosure {
+    overflow:hidden;
+  }
+
+  video::-webkit-media-controls-panel {
+    width: calc(100% + 30px); /* Adjust as needed */
+  }
+  &.video-active {
+    video {
+      animation-name: video_fade_in;
+      animation-duration: 1s;
+      animation-delay: 0.25s;
+      animation-fill-mode: forwards;
+    }
   }
 }
 
 body.single-download {
+
   .course-title {
     margin-bottom: 40px;
-    margin-top: -350px;
     position: relative;
+    text-align: center;
+    transition: all 1s;
     width: 100%;
     z-index: 100;
     h1 {
@@ -34,14 +65,46 @@ body.single-download {
       font-weight: 400;
       text-transform: uppercase;
     }
+    .play-course-video {
+      display: inline-block;
+      font-size: 8em;
+      position: relative;
+      top: -50px;
+      text-align: center;
+      i {
+        border: 2px solid black;
+        border-radius: 50%;
+        color: rgba(255,255,255,0.75);
+        line-height: 96px;
+      }
+      &:hover {
+        i {
+          color: white;
+        }
+      }
+    }
+
     @media screen and (max-width: $screen-md) {
       margin-bottom: 10px;
-      margin-top: -80px;
+      top: -80px;
       h1 {
         font-size: 2em;
       }
     }
   }
+
+  .course-content-wrapper {
+    position: relative;
+    top: -450px;
+    transition: all 1s;
+    &.video-active {
+      top: 20px;
+      .course-title .play-course-video {
+        display: none;
+      }
+    }
+  }
+
 }
 .course-languages {
   border-top: 1px solid $gray-base;

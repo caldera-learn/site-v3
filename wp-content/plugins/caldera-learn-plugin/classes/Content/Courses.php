@@ -29,6 +29,9 @@ class Courses {
     function __construct() {
         add_action( 'init', [ $this, 'cl_setup_language_taxonomy' ] );
         add_action( 'init', [ $this, 'cl_setup_download_type_taxonomy' ] );
+
+        // Course Purchase Link
+        add_action( 'edd_after_download_content', [ $this, 'cl_after_download' ], 1, 1 );
     }
 
     public function cl_setup_language_taxonomy() {
@@ -83,5 +86,27 @@ class Courses {
         );
 
         register_taxonomy( 'download-types', array( 'download' ), $args );
+    }
+
+    public function cl_after_download( $download_id ) {
+        $current_user = wp_get_current_user();
+        remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
+        if ( $current_user->ID && ! edd_has_user_purchased( $current_user->ID, $download_id ) ) {
+            echo edd_get_purchase_link(
+                array(
+                    'download_id' 	=> $download_id,
+                    'class' 	=> 'edd-submit my-new-class',
+                    'text' => 'Start Course',
+                )
+            );
+        } elseif ( ! $current_user->ID ) {
+            echo edd_get_purchase_link(
+                array(
+                    'download_id' 	=> $download_id,
+                    'class' 	=> 'edd-submit my-new-class',
+                    'text' => 'Start Course',
+                )
+            );
+        }
     }
 }

@@ -12,7 +12,7 @@ $posts = new WP_Query( [ 'post_type' => 'post', 'posts_per_page' => 4 ] );
         <p>
             Find teachers & courses to learn quickly
         </p>
-        <a class="btn btn-primary" href="#">
+        <a class="btn btn-primary" href="/caldera-learn-courses">
             Find A Course
         </a>
     </div>
