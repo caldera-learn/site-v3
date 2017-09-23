@@ -35,7 +35,9 @@ var my_theme = my_theme || {};
                 $video_obj.remove();
             } else {
                 $course_header.prepend('<video id="cl_video_player" controls ><source src="' + video_file + '"></source></video>');
-                //$course_header.find('video').get(0).play();
+                setTimeout(function(){
+                    $course_header.find('video').get(0).play();
+                }, 1000);
             }
             $course_header.toggleClass('video-active');
 
