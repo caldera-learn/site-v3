@@ -66,7 +66,7 @@
                         </a>
                     </li>
                     <li class="<?php echo ( is_archive( 'download' ) ) ? 'current-menu-item' : ''; ?>">
-                        <a href="<?php echo get_bloginfo('url') . '/courses'; ?>">
+                        <a href="<?php echo get_bloginfo('url') . '/caldera-learn-courses'; ?>">
                             WordPress Courses
                         </a>
                     </li>

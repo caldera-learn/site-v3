@@ -9,39 +9,40 @@ header.course-header {
   }
 }
 
-.course-title {
-  margin-bottom: 40px;
-  margin-top: -350px;
-  position: relative;
-  width: 100%;
-  z-index: 100;
-  h1 {
-    color: $gray-base;
-    font-family: $font-caldera-title-font;
-    font-size: 4em;
-    font-weight: 700;
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-  }
-  .download-type {
-    color: $color-caldera-orange;
-    display: block;
-    text-align: center;
-    font-family: $font-caldera-title-font;
-    font-size: 1.5em;
-    font-weight: 400;
-    text-transform: uppercase;
-  }
-  @media screen and (max-width:$screen-md) {
-    margin-bottom: 10px;
-    margin-top: -80px;
+body.single-download {
+  .course-title {
+    margin-bottom: 40px;
+    margin-top: -350px;
+    position: relative;
+    width: 100%;
+    z-index: 100;
     h1 {
-      font-size: 2em;
+      color: $gray-base;
+      font-family: $font-caldera-title-font;
+      font-size: 4em;
+      font-weight: 700;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .download-type {
+      color: $color-caldera-orange;
+      display: block;
+      text-align: center;
+      font-family: $font-caldera-title-font;
+      font-size: 1.5em;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+    @media screen and (max-width: $screen-md) {
+      margin-bottom: 10px;
+      margin-top: -80px;
+      h1 {
+        font-size: 2em;
+      }
     }
   }
 }
-
 .course-languages {
   border-top: 1px solid $gray-base;
   border-bottom: 1px solid $gray-base;
